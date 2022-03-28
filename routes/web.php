@@ -21,5 +21,4 @@ Route::post('/empleado/actualizar/{id}', [App\Http\Controllers\EmpleadoControlle
 
 Route::get('/pago', [App\Http\Controllers\PagoController::class, 'index'])->name('pago');
 Route::get('/registro/{dni}', [App\Http\Controllers\RegistroController::class, 'index'])->name('registro');
-Route::post('/registro', [App\Http\Request\RegistroController::class]);
 
