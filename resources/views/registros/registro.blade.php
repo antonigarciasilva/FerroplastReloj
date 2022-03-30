@@ -8,10 +8,18 @@
         <tbody>
             <tr>
                 <th>
-                <span>Nombres Completos </span>
+                Nombres y apellidos:
                 </th>
                 <td>
-                    <span>{{$empleado}}</span>
+                    {{$empleado->Nombre}} {{$empleado->ApellidoPaterno}} {{$empleado->ApellidoMaterno}}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Sueldo:
+                </th>
+                <td>
+                {{$empleado->Sueldo}}
                 </td>
             </tr>
         </tbody>
@@ -36,8 +44,8 @@
         </thead>
         <tbody>
             <tr >
-                <td>hello</td>
-                <td>hello</td>
+                <td>{{$empleado->created_at}}</td>
+                <td>{{$empleado->id_registro}}</td>
                 <td>hello</td>
                 <td>hello</td>
                 <td>hello</td>
@@ -45,7 +53,7 @@
                 <td>hello</td>
             </tr>
             <tr >
-                <td>hello</td>
+                <td>{{$empleado->created_at}}</td>
                 <td>hello</td>
                 <td>hello</td>
                 <td>hello</td>
@@ -54,7 +62,7 @@
                 <td>hello</td>
             </tr>         
             <tr >
-                <td>hello</td>
+                <td>{{$empleado->created_at}}</td>
                 <td>hello</td>
                 <td>hello</td>
                 <td>hello</td>

@@ -4,7 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class registro extends Model
+class Registro extends Model
 {
-    //
+    public function empleado(){
+        return $this->belongsTo(Empleado::class);
+    }
 }

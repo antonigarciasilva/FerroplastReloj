@@ -18,6 +18,9 @@ class CreateRegistrosTable extends Migration
             $table->unsignedBigInteger('empleado_id');
             $table->foreign('empleado_id')->references('id')->on('empleados');
 
+            $table->unsignedBigInteger('evento_id');
+            $table->foreign('evento_id')->references('id')->on('eventos');
+
             $table->timestamps();
         });
     }

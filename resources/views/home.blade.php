@@ -11,15 +11,17 @@
 <div class="card">
 
     <div class="card-header">
-        <h1 class="card-title">Ferroplast</h1>
-
+       
+        
+        <h5 style="vertical-align:middle;margin:15px 50px">Te da la bienvenida a esta gran familia</h5>
+     
+        <img src="/storage/uploads/123.jpg"  width="800" height="410" style="vertical-align:middle;margin:15px 150px" alt="">
     </div>
+ 
 
-    <div class="card-body">
-        <p>Te da la bienvenida a esta gran familia</p>
 
-    </div>
 </div>
+
 
 
 @endsection
@@ -36,9 +38,9 @@
 @section('js')
 <script>
     Swal.fire(
-        'Good job!',
-        'You clicked the button!',
-        'success'
+        'Buen trabajo!',
+        'Presiona el botón para comenzar!',
+        'Éxito'
     )
 </script>
 

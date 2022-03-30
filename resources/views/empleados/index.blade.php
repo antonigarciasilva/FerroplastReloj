@@ -75,15 +75,12 @@
                             </button>
                             @include('empleados.info', ['id' => $empleado->id])
 
-                            <button id="editarEmpleado" onclick="editarEmpleado('{{$empleado->id}}')" type="button" data-toggle="modal" data-target="#formularioEdit" data-whatever="@getbootstrap" class="btn btn-sm btn-warning"  ><i class="far fa-edit"></i>
+                            <button id="editarEmpleado" onclick="editarEmpleado('{{$empleado->id}}')" type="button" data-toggle="modal" data-target="#formularioEdit" data-whatever="@getbootstrap" class="btn btn-sm btn-warning"><i class="far fa-edit"></i>
                             </button>
-                            
-                            <form action="{{url('registros/registro')}}" method="post" class="d-inline">
 
-                                <a href="{{url('/registro')}}" class="btn btn-sm bg-purple" type="submit">
-                                    <i class=" fas fa-fw fa-solid fa-clipboard-list"></i>
-                                </a>
-                            </form>
+                            <a href="{{url('/registro').'/'.$empleado->Dni}}" class="btn btn-sm bg-purple" type="submit">
+                                <i class=" fas fa-fw fa-solid fa-clipboard-list"></i>
+                            </a>
 
                         </td>
 
@@ -116,7 +113,7 @@
             data: id,
             url: `/empleado/editar/${id}`,
             type: 'GET',
-            success: function (res) {
+            success: function(res) {
                 document.getElementById('act_Id').value = res.data.id;
                 document.getElementById('Dni_edit').value = res.data.Dni;
                 document.getElementById('ApellidoPaterno_edit').value = res.data.ApellidoPaterno;
@@ -129,7 +126,7 @@
                 document.getElementById('Telefono_edit').value = res.data.Telefono;
                 document.getElementById('Estado_edit').value = res.data.Estado;
             },
-            error: function (errors) {
+            error: function(errors) {
                 console.log(errors.data.errors);
             }
         });
@@ -140,30 +137,28 @@
             data: id,
             url: `/empleado/editar/${id}`,
             type: 'GET',
-            success: function (res) {
-                document.getElementById('Dni_vista').innerHTML  = res.data.Dni;
-                document.getElementById('Nombre_vista').innerHTML  = res.data.Nombre;
-                document.getElementById('ApellidoPaterno_vista').innerHTML  = res.data.ApellidoPaterno;
-                document.getElementById('ApellidoMaterno_vista').innerHTML  = res.data.ApellidoMaterno;
-                document.getElementById('Correo_vista').innerHTML  = res.data.Correo;
-                document.getElementById('Telefono_vista').innerHTML  = res.data.Telefono;
-                document.getElementById('Cargo_vista').innerHTML  = res.data.Cargo;
-                document.getElementById('Sueldo_vista').innerHTML  = res.data.Sueldo;
-                document.getElementById('Date_vista').innerHTML  = res.data.Date;
-                if(res.data.Estado==1){
-                    document.getElementById('Estado_vista').innerHTML  = '<span class="badge badge-primary">Activo</span>';
-                }
-                else{
-                    document.getElementById('Estado_vista').innerHTML  = '<span class="badge badge-secondary">Inactivo</span>';  
+            success: function(res) {
+                document.getElementById('Dni_vista').innerHTML = res.data.Dni;
+                document.getElementById('Nombre_vista').innerHTML = res.data.Nombre;
+                document.getElementById('ApellidoPaterno_vista').innerHTML = res.data.ApellidoPaterno;
+                document.getElementById('ApellidoMaterno_vista').innerHTML = res.data.ApellidoMaterno;
+                document.getElementById('Correo_vista').innerHTML = res.data.Correo;
+                document.getElementById('Telefono_vista').innerHTML = res.data.Telefono;
+                document.getElementById('Cargo_vista').innerHTML = res.data.Cargo;
+                document.getElementById('Sueldo_vista').innerHTML = res.data.Sueldo;
+                document.getElementById('Date_vista').innerHTML = res.data.Date;
+                if (res.data.Estado == 1) {
+                    document.getElementById('Estado_vista').innerHTML = '<span class="badge badge-primary">Activo</span>';
+                } else {
+                    document.getElementById('Estado_vista').innerHTML = '<span class="badge badge-secondary">Inactivo</span>';
                 }
 
             },
-            error: function (errors) {
+            error: function(errors) {
                 console.log(errors.data.errors);
             }
         });
     }
-
 </script>
 
 @endsection

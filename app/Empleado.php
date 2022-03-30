@@ -21,4 +21,9 @@ class Empleado extends Model
         'Sueldo',
         'Estado'
     ];
+//haciend un mapeo de datos que mi tabla empleados tiene uno o mas registros 
+    public function registros(){
+        return $this->hasMany(Registro::class);
+    }
 }
+

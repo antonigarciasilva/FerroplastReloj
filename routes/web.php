@@ -19,6 +19,5 @@ Route::get('/empleado/editar/{id}', [App\Http\Controllers\EmpleadoController::cl
 Route::post('/empleado/actualizar/{id}', [App\Http\Controllers\EmpleadoController::class, 'update'])
 ->name('empleado.actualizar');
 
-Route::get('/pago', [App\Http\Controllers\PagoController::class, 'index'])->name('pago');
 Route::get('/registro/{dni}', [App\Http\Controllers\RegistroController::class, 'index'])->name('registro');
 
