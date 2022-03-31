@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use App\registro;
 use App\Empleado;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RegistroController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource. first primer elemento del array y el get() te trae todo el array 
      *
      * @return \Illuminate\Http\Response
      */
@@ -17,8 +18,15 @@ class RegistroController extends Controller
     {
 
         $empleado=Empleado::where('Dni',$dni)->first();
-
-        return view('registros.registro')->with(compact('empleado'));
+        $registros = Registro::select(
+            'registros.id',  
+            DB::raw('DATE_FORMAT(registros.created_at, "%d/%m/%Y %r") as datetime'),
+            'eventos.nombre_evento')
+            ->join('eventos', 'eventos.id', '=', 'registros.evento_id')
+            ->where('registros.empleado_id', $empleado->id)
+            ->get();
+        
+        return view('registros.registro')->with(compact('empleado', 'registros'));
     }
 
     /**

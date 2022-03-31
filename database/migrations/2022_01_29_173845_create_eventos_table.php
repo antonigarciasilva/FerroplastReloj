@@ -21,10 +21,10 @@ class CreateEventosTable extends Migration
         });
 
         App\Evento::insert([
-            ['nombre_evento' => 'Horario de entrada', 'created_at'=> Carbon::now(), 'updated_at'=> Carbon::now()],
-            ['nombre_evento' => 'Horario de salida', 'created_at'=> Carbon::now(), 'updated_at'=> Carbon::now()],
+            ['nombre_evento' => 'Entrada', 'created_at'=> Carbon::now(), 'updated_at'=> Carbon::now()],
+            ['nombre_evento' => 'Salida', 'created_at'=> Carbon::now(), 'updated_at'=> Carbon::now()],
             ['nombre_evento' => 'Permiso', 'created_at'=> Carbon::now(), 'updated_at'=> Carbon::now()],
-            ['nombre_evento' => 'Hora_extra', 'created_at'=> Carbon::now(), 'updated_at'=> Carbon::now()],
+            ['nombre_evento' => 'Hora extra', 'created_at'=> Carbon::now(), 'updated_at'=> Carbon::now()],
    
             
             
